@@ -47,13 +47,13 @@
 	function xml2jsonImpl(xml, options) {
 
 		var i, result = {}, attrs = {}, node, child, name;
-		result[options.attrkey] = attrs;
-
+		
 		if (xml.attributes && xml.attributes.length > 0) {
 			for (i = 0; i < xml.attributes.length; i++){
 				var item = xml.attributes.item(i);
 				attrs[item.nodeName] = item.value;
 			}
+			result[options.attrkey] = attrs;
 		}
 
 		// element content
